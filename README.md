@@ -102,14 +102,14 @@ Here’s a breakdown of the services defined in the `docker-compose.yml`:
 - Make sure the `.env` file in the API folder contains the correct values for database credentials.
 - Run `docker-compose logs` to view detailed logs for each container in case of errors.
 
-##Images
-  ##Accessing the Website via HTTP 
+## Images
+  ## Accessing the Website via HTTP 
   ![Screenshot from 2024-10-10 10-06-46](https://github.com/user-attachments/assets/efcb1867-909e-44b8-a416-3cbed5d553f6)
-  ##Accessing the Website via HTTPS
+  ## Accessing the Website via HTTPS
   ![Screenshot from 2024-10-10 10-06-40](https://github.com/user-attachments/assets/aa5c7c38-2416-481b-bb74-583ddf5c42d1)
-  ##Docker Containers Running Status
+  ## Docker Containers Running Status
   ![Screenshot from 2024-10-11 11-19-49](https://github.com/user-attachments/assets/16c0122c-2ac2-491a-92a5-e60a5a582418)
-  ##Docker Images Uploaded to Docker Hub
+  ## Docker Images Uploaded to Docker Hub
   ![Screenshot from 2024-10-11 12-30-03](https://github.com/user-attachments/assets/a05878f7-a98a-4e13-9bf8-848f5cd7f6a5)
 
 
