@@ -1,5 +1,7 @@
 title = "Custom gitleaks config"
 
-[[rules.allowlist]]
-description = "Ignore vendor directory"
-path = '''vendor/'''
+[allowlist]
+  description = "Global allowlist"
+  paths = [
+    "vendor/.*"
+  ]
