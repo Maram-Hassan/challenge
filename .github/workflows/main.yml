@@ -29,13 +29,10 @@ jobs:
       # ---------------- Gitleaks ----------------
       - name: Run Gitleaks
         uses: gitleaks/gitleaks-action@v2
+      - name: Upload Gitleaks SARIF to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          args: detect --source . --no-git --report-path=gitleaks-report.json
-      - name: Upload Gitleaks report
-        uses: actions/upload-artifact@v4
-        with:
-          name: gitleaks-report
-          path: gitleaks-report.json
+          sarif_file: results.sarif
 
       # ---------------- Checkov (Dockerfile scan) ----------------
       - name: Run Checkov on Dockerfile
@@ -45,8 +42,7 @@ jobs:
           framework: dockerfile
           output_format: cli,sarif
           output_file_path: results
-      - name: Upload Checkov report
-        uses: actions/upload-artifact@v4
+      - name: Upload Checkov SARIF to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          name: checkov-report
-          path: results
+          sarif_file: results.sarif
