@@ -20,6 +20,7 @@ jobs:
           project: "challenge"
           path: "."
           format: "ALL"
+
       - name: Upload OWASP report
         uses: actions/upload-artifact@v4
         with:
@@ -27,8 +28,12 @@ jobs:
           path: ./reports
 
       # ---------------- Gitleaks ----------------
+      # Optional: Add a .gitleaks.toml to suppress vendor/ false positives
       - name: Run Gitleaks
         uses: gitleaks/gitleaks-action@v2
+        with:
+          config: .gitleaks.toml
+
       - name: Upload Gitleaks SARIF to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
         with:
@@ -42,6 +47,7 @@ jobs:
           framework: dockerfile
           output_format: cli,sarif
           output_file_path: results
+
       - name: Upload Checkov SARIF to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
         with:
