@@ -5,7 +5,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
+    
+permissions:
+  contents: read
+  security-events: write  # <-- needed for SARIF uploads
+  
 jobs:
   security-scans:
     runs-on: ubuntu-latest
